@@ -39,8 +39,8 @@ class Settings:
                  'resume_audio_playlist'   :  'true',
                 
                  'resume_window'           :  'true',
-                 'resume_volume'           :  'false',
-                 'resume_muted'            :  'false',  
+                 'resume_volume'           :  'true',
+                 'resume_muted'            :  'true',  
         }
         
         self._settings = {  # Holds current settings. Preload with non-user settings
