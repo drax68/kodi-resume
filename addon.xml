@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon 
+	id="script.service.xbmcresume" 
+	name="XBMC Resume" 
+	version="0.0.1" 
+	provider-name="Matt Huisman">
+	
+	<requires>
+    	<import addon="xbmc.python" version="2.1.0"/>
+    	<import addon="xbmc.json"   version="6.0.0"/>
+    	<import addon="xbmc.addon"  version="12.0.0"/>
+	</requires>
+	
+	<extension point="xbmc.python.script" library="addon.py">
+    	<provides>executable</provides>
+	</extension>
+	
+	<extension point="xbmc.service" library="service.py"></extension>
+
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Resumes the last XBMC state.</summary>
+    	<description lang="en">Resumes selectable states (music, video, slideshow, window etc) by monitoring and saving the current states into a database at a defined interval. It then resumes the saved state on XBMC start-up. Due to the constant monitoring, the script is designed to work with unexpected XBMC shutdowns.</description>
+    	<platform>all</platform>
+    	<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    	<disclaimer lang="en">For bugs, requests or questions visit the XBMC Resume thread on the XBMC forum.</disclaimer>
+    	<website>www.matthuisman.com</website>
+    	<email></email>
+  	</extension>
+</addon>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+	<category label="30000">
+		<setting type="bool" label="30001" id="monitor_state" default="true" />
+		<setting type="enum" label="30002" id="state_interval" default="0" values="5|10|30|60" enable="eq(-1,true)" />
+		<setting type="sep" />
+		<setting type="bool" label="30003" id="resume_state" default="true" />
+		<setting type="enum" label="30004" id="resume_delay" default="0" values="0|5|10|30|60" enable="eq(-1,true)" />
+		<setting type="sep" />
+		<setting type="bool" label="30005" id="monitor_settings" default="true" />
+		<setting type="enum" label="30006" id="setts_interval" default="0" values="5|10|30|60" enable="eq(-1,true)" />
+		<setting type="lsep" label="30007" id="setts_warning" visible="eq(-2,false)" />
+		<setting type="sep" />
+		<setting type="bool" label="30008" id="custom_db_path" default="false" />
+		<setting type="folder" label="30009" id="database_dir" default="" enable="eq(-1,true)" option="writeable" />
+		<setting type="text" label="30010" id="database_file" default="xbmcresume.db" enable="eq(-2,true)" />
+	</category>
+    
+	<category label="30030" >
+		<setting type="lsep" label="30031" />
+		<setting type="bool" label="30032" id="resume_video" default="true" />
+		<setting type="bool" label="30033" id="resume_video_time" default="true" enable="eq(-1,true)" />
+		<setting type="bool" label="30034" id="resume_video_playlist" default="true" />
+		<setting type="sep"/>
+		<setting type="bool" label="30035" id="resume_audio" default="true" />
+		<setting type="bool" label="30036" id="resume_audio_time" default="true" enable="eq(-1,true)" />
+		<setting type="bool" label="30037" id="resume_audio_playlist" default="true" />
+	</category>
+    
+	<category label="30060" >
+		<setting type="lsep" label="30061" />
+		<setting type="bool" label="30062" id="resume_window" default="true" />
+		<setting type="sep"/>
+		<setting type="bool" label="30063" id="resume_volume" default="false" />
+		<setting type="bool" label="30064" id="resume_muted" default="false" />
+	</category>
+</settings>

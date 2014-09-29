@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<strings>
+	<string id="30000">General</string>
+		<string id="30001">Monitor for state changes</string>
+		<string id="30002">Time between checking states (seconds)</string>
+		
+		<string id="30003">Resume last saved state on boot</string>
+		<string id="30004">Time delay before resuming (seconds)</string>
+		
+		<string id="30005">Monitor for setting changes</string>
+		<string id="30006">Time between checking settings (seconds)</string>
+		<string id="30007">You will need to restart XBMC each time for changed settings to take affect</string>
+		
+		<string id="30008">Custom saved state database location</string>
+		<string id="30009">Directory</string>
+		<string id="30010">Filename</string>
+    
+	<string id="30030">Media States</string>
+		<string id="30031">Select which media states to monitor & resume</string>
+		<string id="30032">Currently playing video</string>
+		<string id="30033">Video position</string>
+		<string id="30034">Video playlist</string>
+		
+		<string id="30035">Currently playing audio</string>
+		<string id="30036">Audio position</string>
+		<string id="30037">Audio playlist</string>
+		
+		<string id="30038">Slideshow</string>
+    
+    
+	<string id="30060">Other States</string>
+		<string id="30061">Select which other states to monitor & resume</string>
+		<string id="30062">Current Window</string>
+		
+		<string id="30063">Volume Level</string>
+		<string id="30064">Mute Status</string>
+        
+    
+	<string id="30100">%s by %s</string>
+	<string id="30101">Resuming state....</string>
+	<string id="30102">Resume Complete</string>
+	<string id="30103">Settings Updated</string>
+	<string id="30104">Service Started</string>
+	<string id="30105">Service Stopped</string>
+</strings>
