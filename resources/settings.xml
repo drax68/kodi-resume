@@ -29,7 +29,7 @@
     
 	<category label="30060" >
 		<setting type="lsep" label="30061" />
-		<setting type="bool" label="30062" id="resume_window" default="true" />
+		<setting type="bool" label="30062" id="resume_window" default="false" />
 		<setting type="sep"/>
 		<setting type="bool" label="30063" id="resume_volume" default="true" />
 		<setting type="bool" label="30064" id="resume_muted" default="true" />
