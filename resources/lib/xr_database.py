@@ -1,4 +1,4 @@
-##### XBMC Resume by Matt Huisman #####
+##### Kodi Resume by Matt Huisman #####
 
 import json
 import xbmc
@@ -17,7 +17,7 @@ class Database:
     def _createTable(self):
         if ( self._connect() ):
             try:
-                self._cursor.execute("CREATE TABLE IF NOT EXISTS xbmc_resume (name TEXT, data BLOB, PRIMARY KEY (name));")
+                self._cursor.execute("CREATE TABLE IF NOT EXISTS kodi_resume (name TEXT, data BLOB, PRIMARY KEY (name));")
                 self._conn.commit()
             except: pass
             self._disconnect()   
@@ -45,7 +45,7 @@ class Database:
         data = default_data.copy()
         
         # Build query using default data keys so we only get the states we require
-        query = "SELECT name, data FROM xbmc_resume WHERE name IN (%s)" % ", ".join('"%s"' % i for i in data.keys())
+        query = "SELECT name, data FROM kodi_resume WHERE name IN (%s)" % ", ".join('"%s"' % i for i in data.keys())
         if ( self._connect() ):
             try:
                 self._cursor.execute(query)
@@ -60,7 +60,7 @@ class Database:
         
     # Saves any changed state data to database
     def saveStateData(self, new_data, old_data):
-        # Delay the actual save, as sometimes the state can be save while xbmc is aborting
+        # Delay the actual save, as sometimes the state can be save while kodi is aborting
         # and no song data is saved
         xbmc.sleep(1000)
         if (not xbmc.abortRequested):
@@ -68,7 +68,7 @@ class Database:
             result = False
             
             data = []
-            query = "REPLACE INTO xbmc_resume (name, data) VALUES"
+            query = "REPLACE INTO kodi_resume (name, data) VALUES"
             for name in new_data:
                 if ( (name not in old_data) or (new_data[name] != old_data[name]) ):
                     query = "%s ('%s', ?)," % (query, name)

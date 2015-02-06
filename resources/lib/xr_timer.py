@@ -1,4 +1,4 @@
-##### XBMC Resume by Matt Huisman #####
+##### Kodi Resume by Matt Huisman #####
 
 import threading
 

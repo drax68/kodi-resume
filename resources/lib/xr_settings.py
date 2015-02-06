@@ -1,4 +1,4 @@
-##### XBMC Resume by Matt Huisman #####
+##### Kodi Resume by Matt Huisman #####
 
 import sys
 import os
@@ -27,7 +27,7 @@ class Settings:
                  'resume_delay'         :  '0',
                  'custom_db_path'       :  'false',
                  'database_dir'         :  __profile_dir__,
-                 'database_file'        :  'xbmcresume.db',
+                 'database_file'        :  'kodiresume.db',
                  
                  # Default states to resume settings                 
                  'resume_video'            :  'true',
@@ -72,7 +72,7 @@ class Settings:
             return os.path.getmtime(__settings_file__)
         else: return 0
     
-    # Saves user settings to XBMC settings xml file
+    # Saves user settings to kodi settings xml file
     def save(self):
         if ( not xbmc.abortRequested ):
             for name in self._defaults:
@@ -85,7 +85,7 @@ class Settings:
 
             self._lastModTime  = self._getModTime()
   
-    # Loads the user settings from XBMC settings xml file, fallback on default if setting not in xml file
+    # Loads the user settings from kodi settings xml file, fallback on default if setting not in xml file
     def _load(self):
         self._previousSettings = self._settings.copy()
         for name in self._defaults:
@@ -111,7 +111,7 @@ class Settings:
             changed = False
         return changed
 
-    # Converts a xbmc setting string to a boolean
+    # Converts a kodi setting string to a boolean
     def _stringToBool(self, string):
         boolean = False
         if (string == 'true'):

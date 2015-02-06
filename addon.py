@@ -1,4 +1,5 @@
-##### XBMC Resume by Matt Huisman #####
+##### Kodi Resume by Matt Huisman #####
+##### Modified by Ryan Davies     #####
 
 import os
 
@@ -6,7 +7,7 @@ import xbmc
 import xbmcgui
 import xbmcaddon
 
-__addonid__ =  'script.service.xbmcresume'
+__addonid__ =  'script.service.kodiresume'
 __addon__   =  xbmcaddon.Addon(__addonid__)
 
 if ( __name__ == "__main__" ):

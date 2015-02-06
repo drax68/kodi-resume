@@ -1,4 +1,4 @@
-##### XBMC Resume by Matt Huisman #####
+##### Kodi Resume by Matt Huisman #####
 
 import sys
 
@@ -47,7 +47,7 @@ class Service:
         self._doStateCallback = False
         
     def _mainLoop(self):
-        # Loop until self._exit varaible set or xbmc aborting
+        # Loop until self._exit varaible set or kodi aborting
         while ( (not self._exit and not xbmc.abortRequested) ):
             # check to see if any timer callback flags have been set
             self._checkCallbacks()

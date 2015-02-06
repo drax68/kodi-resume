@@ -1,4 +1,4 @@
-##### XBMC Resume by Matt Huisman #####
+##### Kodi Resume by Matt Huisman #####
 
 import sys
 import time
@@ -15,7 +15,7 @@ __addonname__    = sys.modules[ "__main__" ].__addonname__
 __addonauthor__  = sys.modules[ "__main__" ].__addonauthor__
 
 class State:
-    # XBMC Window ID Constants
+    # kodi Window ID Constants
     WINDOW_HOME      = 10000 
     WINDOW_VIDEO     = 12005
     WINDOW_AUDIO     = 12006
@@ -68,7 +68,7 @@ class State:
         self._validData  = False
         self._seekMinimum = 5
         self._muteFor     = 0
-        self._json = xr_json.XBMC_JSON()
+        self._json = xr_json.KODI_JSON()
 
     # Change the state database if different path been set
     def setDatabase(self):
@@ -122,7 +122,7 @@ class State:
         if ( not self._abort() ):
             self._check()
 
-    # Shortcut method to xbmc abortRequested flag
+    # Shortcut method to kodi abortRequested flag
     def _abort(self):
         return xbmc.abortRequested
 
@@ -151,27 +151,27 @@ class State:
     def _enabled(self, setting):
         return self._setts.getBool(setting)
 
-    # Shortcut method to get XBMC's current window id as int
+    # Shortcut method to get kodi's current window id as int
     def _getWindowID(self):
         return xbmcgui.getCurrentWindowId()
     
-    # Returns current XBMC window/folder path as string
+    # Returns current kodi window/folder path as string
     def _getWindowPath(self):
         return self._json.getInfoLabel('Container.FolderPath', self._defaults['window_path'])
     
-    # Returns current XBMC volume level as integer (0-100)
+    # Returns current kodi volume level as integer (0-100)
     def _getVolume(self):
         return int(self._json.executeScalar('Application.GetProperties', {'properties' : ['volume']}, self._defaults['volume']))
     
-    # Returns True if XBMC muted
+    # Returns True if kodi muted
     def _getMuted(self):
         return bool(self._json.executeScalar('Application.GetProperties', {'properties' : ['muted']}, self._defaults['muted']))
     
-    # Set XBMC to muted (value=True) or not-muted (value=False)
+    # Set kodi to muted (value=True) or not-muted (value=False)
     def _setMuted(self, value):
         self._json.executeNonQuery('Application.SetMute', {'mute' : value})
             
-    # Returns XBMC playing time or none if nothing playing
+    # Returns kodi playing time or none if nothing playing
     def _getPlayingTime(self):
         try: time = int(xbmc.Player().getTime())
         except: time = None
@@ -222,7 +222,7 @@ class State:
                 
             # If resumePlaylist enabled and playlist not empty
             if ( resumePlaylist and playlist ):
-                # Load playlist into XBMC
+                # Load playlist into kodi
                 self._json.loadPlaylist(playlistid, playlist)
                 # If resumePlaying enabled and item playing and item in playlist
                 if ( resumePlaying and playing and playlist_pos != None ):
@@ -231,7 +231,7 @@ class State:
                     # Start playing playlist item
                     self._play(item, resumePlayingTime, playingTime)
 
-    # Shortcut method to xbmc sleep method
+    # Shortcut method to kodi sleep method
     def _sleep(self, ms):
         xbmc.sleep(ms)
 

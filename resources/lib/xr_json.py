@@ -1,10 +1,10 @@
-##### XBMC Resume by Matt Huisman #####
+##### Kodi Resume by Matt Huisman #####
 
 import json
 
 import xbmc
 
-class XBMC_JSON:
+class KODI_JSON:
     # Builds JSON request with provided json data
     def _buildRequest(self, method, params={}, jsonrpc='2.0', rid='1'):
         request = {
@@ -101,7 +101,7 @@ class XBMC_JSON:
                 playlist.append(playlist_item)
         return playlist
     
-    # Using a provided playlistid and playlist - adds the playlist items to the current XBMC playlist
+    # Using a provided playlistid and playlist - adds the playlist items to the current kodi playlist
     def loadPlaylist(self, playlistid, playlist):
         requests = []
         for item in playlist:
@@ -122,7 +122,7 @@ class XBMC_JSON:
         result = self._query(request)[:1]
         return result
     
-    # Returns a single XBMC info label as a string - default value can also be provided.
+    # Returns a single kodi info label as a string - default value can also be provided.
     def getInfoLabel(self, label, default='', allowEmpty=True):
         infoLabel = default
         request = self._buildRequest('XBMC.GetInfoLabels', {'labels' : [label]})
@@ -131,7 +131,7 @@ class XBMC_JSON:
             infoLabel = data[label]
         return infoLabel
     
-    # Returns multiple XBMC info labels in a dictionary - default values in a dictionary can be provided.
+    # Returns multiple kodi info labels in a dictionary - default values in a dictionary can be provided.
     def getInfoLabels(self, labels, defaults={}, allowEmpty=True):
         infoLabels = {}
         for label in labels:

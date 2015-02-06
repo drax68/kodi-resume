@@ -1,4 +1,5 @@
-##### XBMC Resume by Matt Huisman #####
+##### Kodi Resume by Matt Huisman #####
+##### Modified by Ryan Davies     #####
 
 import sys
 import os
@@ -12,7 +13,7 @@ import xbmcvfs
 REMOTE_DEBUG = False
 
 # Get all super-global script contents
-__addonid__          =  'script.service.xbmcresume'
+__addonid__          =  'script.service.kodiresume'
 __addon__            =  xbmcaddon.Addon(__addonid__)
 __addonname__        =  __addon__.getAddonInfo('name')
 __addonauthor__      =  __addon__.getAddonInfo('author')
@@ -30,7 +31,7 @@ sys.path.append(__resource__)
 import xr_service
 
 def start():
-    # Set a window property that let's other scripts know we are running (window properties are cleared on XBMC start)
+    # Set a window property that let's other scripts know we are running (window properties are cleared on kodi start)
     xbmcgui.Window(10000).setProperty(__addonid__ + '_running', 'True')
 
     # Try to get any system arguments

@@ -13,7 +13,7 @@
 		<setting type="sep" />
 		<setting type="bool" label="30008" id="custom_db_path" default="false" />
 		<setting type="folder" label="30009" id="database_dir" default="" enable="eq(-1,true)" option="writeable" />
-		<setting type="text" label="30010" id="database_file" default="xbmcresume.db" enable="eq(-2,true)" />
+		<setting type="text" label="30010" id="database_file" default="kodiresume.db" enable="eq(-2,true)" />
 	</category>
     
 	<category label="30030" >
